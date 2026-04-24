@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ourevox - Transforming Business Efficiency through Automation & Data Intelligence. Premium solutions for global enterprises.">
+    <title>Ourevox | Transforming Business Efficiency</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="Ourevox Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none">OUREVOX</span>
+            </a>
+            <div class="nav-links">
+                <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
+                <a href="#services" data-i18n="nav_services">Services</a>
+                <a href="#case-study" data-i18n="nav_cases">Case Study</a>
+                <a href="#about" data-i18n="nav_about">About</a>
+                <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;" data-i18n="btn_demo">Book a Demo</button>
+            </div>
+            <button class="btn btn-secondary" onclick="toggleLanguage()" style="padding: 0.5rem 1rem; border-radius: 9999px; display: flex; align-items: center; gap: 0.5rem;">
+                <span class="material-symbols-rounded" style="font-size: 1.2rem;">language</span>
+                <span id="lang-btn-text">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem; display: block; margin-bottom: 1rem;">Ourevox Global</span>
+                    <h1 data-i18n="hero_title">Transforming Business Efficiency Through <span class="gradient-text">Automation & Intelligence</span></h1>
+                    <p data-i18n="hero_desc">We help companies work faster, smarter, and more efficiently through cutting-edge operational transformation.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn-primary" data-i18n="btn_get_started">Get Started</a>
+                        <a href="#about" class="btn btn-secondary" data-i18n="btn_consultation">Book a Consultation</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal" style="transition-delay: 0.2s;">
+                    <!-- Placeholder for tech visual -->
+                    <div style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop" alt="Dashboard Mockup" class="visual-mockup">
+                        <div style="position: absolute; top: -20px; right: -20px; background: var(--surface-dark); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-lg);">
+                            <div style="color: var(--primary); font-weight: 800; font-size: 1.5rem;">+40%</div>
+                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Operational Gain</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section style="padding: 4rem 2rem; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+            <div class="container" style="text-align: center;">
+                <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; margin-bottom: 3rem; color: var(--text-secondary);">Empowering global leaders in</p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; opacity: 0.5; filter: grayscale(1);">
+                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">LOGISTIX</div>
+                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">FABRIKA</div>
+                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">SMARTCORE</div>
+                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">ECOFLOW</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem / Solution Section -->
+        <section id="solutions" class="container">
+            <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
+                <h2 data-i18n="prob_title">Breaking the Barriers to Growth</h2>
+                <p style="max-width: 600px; margin: 1rem auto;">Legacy processes and manual workflows are the hidden costs of modern business.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="stat-card reveal">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">The Challenge</h3>
+                    <ul style="list-style: none; color: var(--text-secondary); space-y: 1rem;">
+                        <li style="margin-bottom: 1rem;">✕ Manual & Repetitive Tasks</li>
+                        <li style="margin-bottom: 1rem;">✕ Lack of Real-time Visibility</li>
+                        <li style="margin-bottom: 1rem;">✕ High Operational Error Rates</li>
+                    </ul>
+                </div>
+                <div class="stat-card reveal" style="border-color: var(--primary); background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent);">
+                    <h3 style="color: white; margin-bottom: 1rem;">The Ourevox Solution</h3>
+                    <ul style="list-style: none; color: var(--text-primary);">
+                        <li style="margin-bottom: 1rem;">✓ Intelligent Automation</li>
+                        <li style="margin-bottom: 1rem;">✓ Real-time Data Dashboards</li>
+                        <li style="margin-bottom: 1rem;">✓ Process Optimization Engine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <div style="margin-bottom: 4rem;" class="reveal">
+                <h2 data-i18n="services_title">Enterprise-Grade Services</h2>
+            </div>
+            <div class="card-grid">
+                <div class="service-card reveal">
+                    <div class="icon-box"><span class="material-symbols-rounded">troubleshoot</span></div>
+                    <h3>Audit & Analysis</h3>
+                    <p>Deep-dive diagnostics into your existing workflows to uncover inefficiencies and untapped ROI.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="icon-box"><span class="material-symbols-rounded">bolt</span></div>
+                    <h3>Process Automation</h3>
+                    <p>Building custom intelligent agents and automation pipelines that scale with your business.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="icon-box"><span class="material-symbols-rounded">bar_chart</span></div>
+                    <h3>Data Performance</h3>
+                    <p>Next-gen dashboards providing absolute clarity on every operational metric in real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="container">
+            <div style="text-align: center; margin-bottom: 6rem;" class="reveal">
+                <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Our Methodology</span>
+                <h2 style="margin-top: 1rem;">Simple. Scalable. <span class="gradient-text">Success.</span></h2>
+            </div>
+            <div class="card-grid">
+                <div class="reveal" style="text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">01</div>
+                    <h3>Analyze</h3>
+                    <p>We map your entire operation to find hidden friction.</p>
+                </div>
+                <div class="reveal" style="text-align: center; transition-delay: 0.1s;">
+                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">02</div>
+                    <h3>Automate</h3>
+                    <p>We build and deploy intelligent workflows tailored for you.</p>
+                </div>
+                <div class="reveal" style="text-align: center; transition-delay: 0.2s;">
+                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">03</div>
+                    <h3>Accelerate</h3>
+                    <p>Continuous optimization to stay ahead of the market.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Section -->
+        <section id="case-study" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="reveal">
+                        <span style="color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: block;">Success Story</span>
+                        <h2>Logistics Giant <span class="gradient-text">Optimized</span></h2>
+                        <p style="margin: 2rem 0;">A global logistics firm reduced operational errors by 85% within 3 months of implementing Ourevox automation.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 800; color: white;">85%</div>
+                                <div style="font-size: 0.875rem;">Error Reduction</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 800; color: white;">3x</div>
+                                <div style="font-size: 0.875rem;">Throughput Speed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" alt="Logistics" style="width: 100%; border-radius: 24px; filter: grayscale(0.5) contrast(1.2);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="text-align: center;">
+            <div class="container reveal">
+                <h2 style="margin-bottom: 2rem;">Ready to transform your business operations?</h2>
+                <button class="btn btn-primary" style="padding: 1.5rem 3rem; font-size: 1.25rem;" data-i18n="btn_demo">Book a Demo</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <a href="#" class="logo" style="margin-bottom: 2rem;">OUREVOX</a>
+                <p>Scaling operational excellence globally through data-driven intelligence.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">Product</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><a href="#solutions" style="text-decoration: none; color: var(--text-secondary);">Solutions</a></li>
+                    <li><a href="#services" style="text-decoration: none; color: var(--text-secondary);">Services</a></li>
+                    <li><a href="#case-study" style="text-decoration: none; color: var(--text-secondary);">Case Study</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">Company</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><a href="#about" style="text-decoration: none; color: var(--text-secondary);">About</a></li>
+                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1.5rem;">Social</h4>
+                <ul style="list-style: none; line-height: 2;">
+                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">LinkedIn</a></li>
+                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 6rem; color: var(--text-secondary); font-size: 0.875rem;">
+            © 2024 Ourevox. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
