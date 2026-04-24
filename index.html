@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ourevox - Transforming Business Efficiency through Automation & Data Intelligence. Premium solutions for global enterprises.">
-    <title>Ourevox | Transforming Business Efficiency</title>
+    
+    <!-- SEO Primary Tags -->
+    <title>Ourevox | Operational Excellence & Business Automation</title>
+    <meta name="title" content="Ourevox | Operational Excellence & Business Automation">
+    <meta name="description" content="Ourevox transforms business efficiency through intelligent automation and data intelligence. Specialized in logistics, manufacturing, and enterprise optimization.">
+    <meta name="keywords" content="operational excellence, business automation, data intelligence, process optimization, logistics tech, enterprise efficiency">
+    <meta name="author" content="Ourevox">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ourevox.com/">
+    <meta property="og:title" content="Ourevox | Operational Excellence & Business Automation">
+    <meta property="og:description" content="Transforming Business Efficiency Through Automation & Intelligence. Scaling global operations with data-driven insights.">
+    <meta property="og:image" content="assets/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ourevox.com/">
+    <meta property="twitter:title" content="Ourevox | Operational Excellence & Business Automation">
+    <meta property="twitter:description" content="Transforming Business Efficiency Through Automation & Intelligence. Scaling global operations with data-driven insights.">
+    <meta property="twitter:image" content="assets/logo.png">
+
+    <!-- Canonical & Favicon -->
+    <link rel="canonical" href="https://ourevox.com/">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +56,7 @@
                 <a href="#services" data-i18n="nav_services">Services</a>
                 <a href="#case-study" data-i18n="nav_cases">Case Study</a>
                 <a href="#about" data-i18n="nav_about">About</a>
-                <button class="btn btn-primary" style="padding: 0.75rem 1.5rem;" data-i18n="btn_demo">Book a Demo</button>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.75rem 1.5rem;" data-i18n="btn_demo">Book a Demo</a>
             </div>
             
             <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
@@ -62,7 +85,7 @@
                 <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services">Services</a>
                 <a href="#case-study" onclick="toggleMobileMenu()" data-i18n="nav_cases">Case Study</a>
                 <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about">About</a>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 2rem;" data-i18n="btn_demo">Book a Demo</button>
+                <a href="#contact" class="btn btn-primary" onclick="toggleMobileMenu()" style="width: 100%; margin-top: 2rem; display: block; text-align: center;" data-i18n="btn_demo">Book a Demo</a>
             </div>
         </div>
     </div>
@@ -211,10 +234,27 @@
         </section>
 
         <!-- Final CTA -->
-        <section style="text-align: center;">
+        <section id="contact" style="text-align: center;">
             <div class="container reveal">
                 <h2 style="margin-bottom: 2rem;">Ready to transform your business operations?</h2>
-                <button class="btn btn-primary" style="padding: 1.5rem 3rem; font-size: 1.25rem;" data-i18n="btn_demo">Book a Demo</button>
+                <div style="max-width: 600px; margin: 0 auto; text-align: left;">
+                    <form action="https://formspree.io/f/contact@rejustewenoumi.com" method="POST" class="stat-card" style="display: flex; flex-direction: column; gap: 1.5rem; background: var(--surface-dark);">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Full Name</label>
+                            <input type="text" name="name" placeholder="John Doe" required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Work Email</label>
+                            <input type="email" name="email" placeholder="john@company.com" required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);">
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Project Details</label>
+                            <textarea name="message" rows="4" placeholder="Tell us about your operational challenges..." required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="font-size: 1.1rem;" data-i18n="btn_demo">Book a Demo</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-secondary);">Direct contact: contact@rejustewenoumi.com</p>
+                </div>
             </div>
         </section>
     </main>
@@ -236,8 +276,7 @@
             <div>
                 <h4 style="color: white; margin-bottom: 1.5rem;">Company</h4>
                 <ul style="list-style: none; line-height: 2;">
-                    <li><a href="#about" style="text-decoration: none; color: var(--text-secondary);">About</a></li>
-                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Contact</a></li>
+                    <li><a href="mailto:contact@rejustewenoumi.com" style="text-decoration: none; color: var(--text-secondary);">Contact</a></li>
                 </ul>
             </div>
             <div>
