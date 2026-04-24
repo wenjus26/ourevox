@@ -72,6 +72,22 @@ const revealObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('mobile-overlay');
+    const isActive = menu.classList.toggle('active');
+    
+    if (isActive) {
+        overlay.style.display = 'block';
+        setTimeout(() => overlay.style.opacity = '1', 10);
+        document.body.style.overflow = 'hidden';
+    } else {
+        overlay.style.opacity = '0';
+        setTimeout(() => overlay.style.display = 'none', 500);
+        document.body.style.overflow = '';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     updateContent();
     
@@ -79,4 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => {
         revealObserver.observe(el);
     });
+});
+
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+        // Optional: remove from DOM after fade
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 800);
+    }
 });
