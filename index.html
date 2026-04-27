@@ -1,295 +1,416 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourevox | Modernizing Business Operations</title>
+    <meta name="description" content="Ourevox helps SMEs in Africa improve operational efficiency through automation, data dashboards, and process optimization.">
     
-    <!-- SEO Primary Tags -->
-    <title>Ourevox | Operational Excellence & Business Automation</title>
-    <meta name="title" content="Ourevox | Operational Excellence & Business Automation">
-    <meta name="description" content="Ourevox transforms business efficiency through intelligent automation and data intelligence. Specialized in logistics, manufacturing, and enterprise optimization.">
-    <meta name="keywords" content="operational excellence, business automation, data intelligence, process optimization, logistics tech, enterprise efficiency">
-    <meta name="author" content="Ourevox">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ourevox.com/">
-    <meta property="og:title" content="Ourevox | Operational Excellence & Business Automation">
-    <meta property="og:description" content="Transforming Business Efficiency Through Automation & Intelligence. Scaling global operations with data-driven insights.">
-    <meta property="og:image" content="assets/logo.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ourevox.com/">
-    <meta property="twitter:title" content="Ourevox | Operational Excellence & Business Automation">
-    <meta property="twitter:description" content="Transforming Business Efficiency Through Automation & Intelligence. Scaling global operations with data-driven insights.">
-    <meta property="twitter:image" content="assets/logo.png">
-
-    <!-- Canonical & Favicon -->
-    <link rel="canonical" href="https://ourevox.com/">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        dark: {
+                            900: '#050505',
+                            800: '#0a0a0a',
+                            700: '#141414',
+                            600: '#1f1f1f',
+                            border: '#2a2a2a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="loader-circle"></div>
-            <div style="color: white; font-weight: 800; letter-spacing: 0.2em; font-size: 0.8rem; text-transform: uppercase;">OUREVOX</div>
+<body class="bg-dark-900 text-gray-300 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-dark-900 transition-opacity duration-700">
+        <div class="relative flex flex-col items-center">
+            <div class="w-12 h-12 border-t-2 border-brand-500 border-solid rounded-full animate-spin"></div>
+            <span class="mt-4 text-sm font-semibold tracking-[0.3em] text-white uppercase">Ourevox</span>
         </div>
     </div>
 
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
+    <!-- Background Effects -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-600/10 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/10 blur-[120px]"></div>
+    </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo.png" alt="Ourevox Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span style="display:none">OUREVOX</span>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="assets/logo.png" alt="Ourevox" class="h-8 object-contain">
+                <span class="text-white font-bold text-xl tracking-tight">Ourevox</span>
             </a>
-            <div class="nav-links">
-                <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
-                <a href="#services" data-i18n="nav_services">Services</a>
-                <a href="#case-study" data-i18n="nav_cases">Case Study</a>
-                <a href="#about" data-i18n="nav_about">About</a>
-                <a href="#contact" class="btn btn-primary" style="padding: 0.75rem 1.5rem;" data-i18n="btn_demo">Book a Demo</a>
-            </div>
             
-            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
-                <button class="btn btn-secondary lang-btn" onclick="toggleLanguage()" style="padding: 0.5rem 1rem; border-radius: 9999px; display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="material-symbols-rounded" style="font-size: 1.2rem;">language</span>
-                    <span id="lang-btn-text">EN</span>
-                </button>
-                <button class="mobile-toggle" onclick="toggleMobileMenu()" style="display: none; background: none; border: none; cursor: pointer; color: var(--bg-dark);">
-                    <span class="material-symbols-rounded" style="font-size: 2rem;">menu</span>
-                </button>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#problem" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" data-i18n="nav_prob">Problem</a>
+                <a href="#solution" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" data-i18n="nav_sol">Solutions</a>
+                <a href="#services" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" data-i18n="nav_srv">Services</a>
+                <a href="#pricing" class="text-sm font-medium text-gray-400 hover:text-white transition-colors" data-i18n="nav_pri">Pricing</a>
             </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <!-- Lang Toggle -->
+                <div class="flex items-center bg-dark-800 rounded-full p-1 border border-dark-border">
+                    <button class="lang-toggle-btn px-3 py-1 text-xs font-bold rounded-full bg-white text-dark-900 transition-all" data-lang="en">EN</button>
+                    <button class="lang-toggle-btn px-3 py-1 text-xs font-bold rounded-full text-gray-400 hover:text-white transition-all" data-lang="fr">FR</button>
+                </div>
+                <a href="#contact" class="text-sm font-medium bg-white text-dark-900 px-5 py-2.5 rounded-full hover:bg-gray-100 transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]" data-i18n="nav_btn">Book Demo</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 z-50 focus:outline-none">
+                <span class="burger-line w-6 h-0.5 bg-gray-300 rounded-full transition-all duration-300"></span>
+                <span class="burger-line w-6 h-0.5 bg-gray-300 rounded-full transition-all duration-300"></span>
+                <span class="burger-line w-6 h-0.5 bg-gray-300 rounded-full transition-all duration-300"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="mobile-menu">
-        <div class="mobile-menu-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                <span class="logo" style="color: var(--bg-dark);">OUREVOX</span>
-                <button onclick="toggleMobileMenu()" style="background: none; border: none; cursor: pointer; color: var(--bg-dark);">
-                    <span class="material-symbols-rounded" style="font-size: 2rem;">close</span>
-                </button>
-            </div>
-            <div class="mobile-links">
-                <a href="#solutions" onclick="toggleMobileMenu()" data-i18n="nav_solutions">Solutions</a>
-                <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav_services">Services</a>
-                <a href="#case-study" onclick="toggleMobileMenu()" data-i18n="nav_cases">Case Study</a>
-                <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav_about">About</a>
-                <a href="#contact" class="btn btn-primary" onclick="toggleMobileMenu()" style="width: 100%; margin-top: 2rem; display: block; text-align: center;" data-i18n="btn_demo">Book a Demo</a>
-            </div>
+    <!-- Mobile Menu Compact Card -->
+    <div id="mobile-menu-card" class="fixed top-24 right-6 w-64 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.3)] z-40 flex flex-col py-4 px-2 opacity-0 pointer-events-none transition-all duration-300 translate-y-[-10px] md:hidden border border-gray-100">
+        <a href="#problem" class="mobile-link text-dark-900 font-medium text-lg px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors" data-i18n="nav_prob">Problem</a>
+        <a href="#solution" class="mobile-link text-dark-900 font-medium text-lg px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors" data-i18n="nav_sol">Solutions</a>
+        <a href="#services" class="mobile-link text-dark-900 font-medium text-lg px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors" data-i18n="nav_srv">Services</a>
+        <a href="#pricing" class="mobile-link text-dark-900 font-medium text-lg px-4 py-3 rounded-xl hover:bg-gray-100 transition-colors" data-i18n="nav_pri">Pricing</a>
+        <div class="h-px bg-gray-100 my-2 mx-4"></div>
+        <div class="flex justify-center gap-2 mb-2">
+            <button class="lang-toggle-btn px-4 py-2 text-sm font-bold rounded-lg bg-dark-900 text-white" data-lang="en">EN</button>
+            <button class="lang-toggle-btn px-4 py-2 text-sm font-bold rounded-lg border border-gray-200 text-dark-900" data-lang="fr">FR</button>
         </div>
+        <a href="#contact" class="mobile-link text-center bg-brand-500 text-white font-bold text-lg px-4 py-3 rounded-xl hover:bg-brand-600 transition-colors mt-2 mx-2 shadow-md" data-i18n="nav_btn">Book a Demo</a>
     </div>
 
-    <!-- Mobile Menu Overlay Background -->
-    <div id="mobile-overlay" onclick="toggleMobileMenu()" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); z-index: 998; display: none; opacity: 0; transition: opacity 0.5s ease;"></div>
-
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-content reveal">
-                    <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem; display: block; margin-bottom: 1rem;">Ourevox Global</span>
-                    <h1 data-i18n="hero_title">Transforming Business Efficiency Through <span class="gradient-text">Automation & Intelligence</span></h1>
-                    <p data-i18n="hero_desc">We help companies work faster, smarter, and more efficiently through cutting-edge operational transformation.</p>
-                    <div class="btn-group">
-                        <a href="#contact" class="btn btn-primary" data-i18n="btn_get_started">Get Started</a>
-                        <a href="#about" class="btn btn-secondary" data-i18n="btn_consultation">Book a Consultation</a>
+        <!-- 1. HERO SECTION -->
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm font-medium mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span data-i18n="hero_tag">Empowering SMEs in West Africa</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+                        <span data-i18n="hero_title_1">Our Vision for Operational eXcellence</span> <br class="hidden md:block"/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-600" data-i18n="hero_title_2">in modern businesses.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="hero_desc">
+                        We help businesses work faster, smarter, and more efficiently. Eliminate manual processes and boost productivity with smart automation.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-white text-dark-900 rounded-full font-semibold hover:bg-gray-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:-translate-y-1" data-i18n="hero_btn_1">
+                            Book a Free Audit
+                        </a>
+                        <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 bg-dark-800 text-white rounded-full font-semibold border border-dark-border hover:bg-dark-700 transition-all flex items-center justify-center gap-2">
+                            <span data-i18n="hero_btn_2">How it works</span>
+                            <span class="material-symbols-rounded text-lg">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
-                <div class="hero-visual reveal" style="transition-delay: 0.2s;">
-                    <!-- Placeholder for tech visual -->
-                    <div style="position: relative;">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=2070&auto=format&fit=crop" alt="Dashboard Mockup" class="visual-mockup">
-                        <div style="position: absolute; top: -20px; right: -20px; background: var(--surface-dark); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--glass-border); box-shadow: var(--shadow-lg);">
-                            <div style="color: var(--primary); font-weight: 800; font-size: 1.5rem;">+40%</div>
-                            <div style="font-size: 0.75rem; color: var(--text-secondary);">Operational Gain</div>
-                        </div>
-                    </div>
+
+                <div class="mt-16 md:mt-24 relative reveal delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent z-10"></div>
+                    <img src="assets/hero_dashboard_mockup_1777284904470.png" alt="SaaS Dashboard" class="w-full rounded-2xl border border-dark-border shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                 </div>
             </div>
         </section>
 
-        <!-- Trusted By Section -->
-        <section style="padding: 4rem 2rem; border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
-            <div class="container" style="text-align: center;">
-                <p style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; margin-bottom: 3rem; color: var(--text-secondary);">Empowering global leaders in</p>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem; opacity: 0.5; filter: grayscale(1);">
-                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">LOGISTIX</div>
-                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">FABRIKA</div>
-                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">SMARTCORE</div>
-                    <div style="font-weight: 800; font-size: 1.2rem; color: white; letter-spacing: 0.1em;">ECOFLOW</div>
+        <!-- MARQUEE LOGOS -->
+        <section class="py-10 border-y border-dark-border overflow-hidden bg-dark-800/30">
+            <div class="relative w-full flex items-center">
+                <div class="absolute left-0 w-32 h-full bg-gradient-to-r from-dark-900 to-transparent z-10"></div>
+                <div class="absolute right-0 w-32 h-full bg-gradient-to-l from-dark-900 to-transparent z-10"></div>
+                
+                <div class="animate-marquee flex items-center gap-16 px-8">
+                    <!-- Set 1 -->
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Logistix</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Fabrika</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">SmartCore</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">EcoFlow</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">AeroDash</div>
+                    <!-- Set 2 (Duplicate for infinite loop) -->
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Logistix</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Fabrika</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">SmartCore</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">EcoFlow</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">AeroDash</div>
+                    <!-- Set 3 -->
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Logistix</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">Fabrika</div>
+                    <div class="text-xl font-bold text-gray-500 tracking-widest uppercase">SmartCore</div>
                 </div>
             </div>
         </section>
 
-        <!-- Problem / Solution Section -->
-        <section id="solutions" class="container">
-            <div style="text-align: center; margin-bottom: 5rem;" class="reveal">
-                <h2 data-i18n="prob_title">Breaking the Barriers to Growth</h2>
-                <p style="max-width: 600px; margin: 1rem auto;">Legacy processes and manual workflows are the hidden costs of modern business.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="stat-card reveal">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">The Challenge</h3>
-                    <ul style="list-style: none; color: var(--text-secondary); space-y: 1rem;">
-                        <li style="margin-bottom: 1rem;">✕ Manual & Repetitive Tasks</li>
-                        <li style="margin-bottom: 1rem;">✕ Lack of Real-time Visibility</li>
-                        <li style="margin-bottom: 1rem;">✕ High Operational Error Rates</li>
-                    </ul>
-                </div>
-                <div class="stat-card reveal" style="border-color: var(--primary); background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), transparent);">
-                    <h3 style="color: white; margin-bottom: 1rem;">The Ourevox Solution</h3>
-                    <ul style="list-style: none; color: var(--text-primary);">
-                        <li style="margin-bottom: 1rem;">✓ Intelligent Automation</li>
-                        <li style="margin-bottom: 1rem;">✓ Real-time Data Dashboards</li>
-                        <li style="margin-bottom: 1rem;">✓ Process Optimization Engine</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="container">
-            <div style="margin-bottom: 4rem;" class="reveal">
-                <h2 data-i18n="services_title">Enterprise-Grade Services</h2>
-            </div>
-            <div class="card-grid">
-                <div class="service-card reveal">
-                    <div class="icon-box"><span class="material-symbols-rounded">troubleshoot</span></div>
-                    <h3>Audit & Analysis</h3>
-                    <p>Deep-dive diagnostics into your existing workflows to uncover inefficiencies and untapped ROI.</p>
-                </div>
-                <div class="service-card reveal" style="transition-delay: 0.1s;">
-                    <div class="icon-box"><span class="material-symbols-rounded">bolt</span></div>
-                    <h3>Process Automation</h3>
-                    <p>Building custom intelligent agents and automation pipelines that scale with your business.</p>
-                </div>
-                <div class="service-card reveal" style="transition-delay: 0.2s;">
-                    <div class="icon-box"><span class="material-symbols-rounded">bar_chart</span></div>
-                    <h3>Data Performance</h3>
-                    <p>Next-gen dashboards providing absolute clarity on every operational metric in real-time.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section id="process" class="container">
-            <div style="text-align: center; margin-bottom: 6rem;" class="reveal">
-                <span style="color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.875rem;">Our Methodology</span>
-                <h2 style="margin-top: 1rem;">Simple. Scalable. <span class="gradient-text">Success.</span></h2>
-            </div>
-            <div class="card-grid">
-                <div class="reveal" style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">01</div>
-                    <h3>Analyze</h3>
-                    <p>We map your entire operation to find hidden friction.</p>
-                </div>
-                <div class="reveal" style="text-align: center; transition-delay: 0.1s;">
-                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">02</div>
-                    <h3>Automate</h3>
-                    <p>We build and deploy intelligent workflows tailored for you.</p>
-                </div>
-                <div class="reveal" style="text-align: center; transition-delay: 0.2s;">
-                    <div style="font-size: 3rem; font-weight: 900; opacity: 0.1; margin-bottom: -1.5rem;">03</div>
-                    <h3>Accelerate</h3>
-                    <p>Continuous optimization to stay ahead of the market.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Case Study Section -->
-        <section id="case-study" style="background: rgba(255,255,255,0.02);">
-            <div class="container">
-                <div class="hero-grid">
+        <!-- 2. PROBLEM SECTION -->
+        <section id="problem" class="py-24 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div class="reveal">
-                        <span style="color: var(--accent); font-weight: 600; margin-bottom: 1rem; display: block;">Success Story</span>
-                        <h2>Logistics Giant <span class="gradient-text">Optimized</span></h2>
-                        <p style="margin: 2rem 0;">A global logistics firm reduced operational errors by 85% within 3 months of implementing Ourevox automation.</p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800; color: white;">85%</div>
-                                <div style="font-size: 0.875rem;">Error Reduction</div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-i18n="prob_title">The hidden cost of manual operations</h2>
+                        <p class="text-gray-400 mb-8 text-lg" data-i18n="prob_desc">SMEs in Africa lose up to 30% of their revenue due to inefficient workflows, scattered data, and repetitive manual tasks.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-800 border border-dark-border spotlight-card">
+                                <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 shrink-0"><span class="material-symbols-rounded">warning</span></div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1" data-i18n="prob_i1_t">Repetitive Manual Tasks</h4>
+                                    <p class="text-sm text-gray-400" data-i18n="prob_i1_d">Employees spend hours on data entry instead of high-value strategic work.</p>
+                                </div>
                             </div>
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800; color: white;">3x</div>
-                                <div style="font-size: 0.875rem;">Throughput Speed</div>
+                            <div class="flex items-start gap-4 p-4 rounded-xl bg-dark-800 border border-dark-border spotlight-card">
+                                <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 shrink-0"><span class="material-symbols-rounded">visibility_off</span></div>
+                                <div>
+                                    <h4 class="text-white font-medium mb-1" data-i18n="prob_i2_t">Lack of Data Visibility</h4>
+                                    <p class="text-sm text-gray-400" data-i18n="prob_i2_d">Decisions are made on intuition rather than real-time operational insights.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="reveal" style="transition-delay: 0.2s;">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" alt="Logistics" style="width: 100%; border-radius: 24px; filter: grayscale(0.5) contrast(1.2);">
+                    <div class="relative reveal delay-100">
+                        <div class="aspect-square rounded-2xl bg-gradient-to-br from-dark-800 to-dark-900 border border-dark-border p-8 flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]"></div>
+                            
+                            <div class="relative z-10 flex flex-col gap-4">
+                                <div class="h-16 w-full bg-dark-700 rounded-lg animate-pulse border border-dark-border"></div>
+                                <div class="h-16 w-[80%] bg-dark-700 rounded-lg animate-pulse border border-dark-border"></div>
+                                <div class="h-16 w-[90%] bg-dark-700 rounded-lg animate-pulse border border-dark-border"></div>
+                                <div class="mt-6 flex items-center justify-between text-red-400 font-medium">
+                                    <span data-i18n="prob_alert">Bottleneck detected</span>
+                                    <span class="material-symbols-rounded animate-bounce">error</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA -->
-        <section id="contact" style="text-align: center;">
-            <div class="container reveal">
-                <h2 style="margin-bottom: 2rem;">Ready to transform your business operations?</h2>
-                <div style="max-width: 600px; margin: 0 auto; text-align: left;">
-                    <form action="https://formspree.io/f/contact@rejustewenoumi.com" method="POST" class="stat-card" style="display: flex; flex-direction: column; gap: 1.5rem; background: var(--surface-dark);">
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Full Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);">
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Work Email</label>
-                            <input type="email" name="email" placeholder="john@company.com" required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);">
-                        </div>
-                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                            <label style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">Project Details</label>
-                            <textarea name="message" rows="4" placeholder="Tell us about your operational challenges..." required style="padding: 1rem; border-radius: 12px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; outline: none; transition: var(--transition-fast);"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="font-size: 1.1rem;" data-i18n="btn_demo">Book a Demo</button>
-                    </form>
-                    <p style="text-align: center; margin-top: 1.5rem; font-size: 0.8rem; color: var(--text-secondary);">Direct contact: contact@rejustewenoumi.com</p>
+        <!-- 3. SOLUTION SECTION -->
+        <section id="solution" class="py-24 relative bg-dark-800/30 border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-i18n="sol_title">Engineered for efficiency</h2>
+                    <p class="text-gray-400 text-lg" data-i18n="sol_desc">We replace chaos with clarity. Ourevox builds the digital infrastructure your business needs to scale seamlessly.</p>
                 </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-dark-border reveal">
+                        <div class="w-12 h-12 rounded-xl bg-dark-700 border border-dark-border flex items-center justify-center text-brand-400 mb-6"><span class="material-symbols-rounded">smart_toy</span></div>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-i18n="sol_c1_t">Automation</h3>
+                        <p class="text-gray-400 leading-relaxed" data-i18n="sol_c1_d">Automate invoicing, inventory updates, and customer communications.</p>
+                    </div>
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-dark-border reveal delay-100">
+                        <div class="w-12 h-12 rounded-xl bg-dark-700 border border-dark-border flex items-center justify-center text-blue-400 mb-6"><span class="material-symbols-rounded">insert_chart</span></div>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-i18n="sol_c2_t">Data Dashboards</h3>
+                        <p class="text-gray-400 leading-relaxed" data-i18n="sol_c2_d">Visualize your KPIs in real-time. Beautiful, intuitive dashboards.</p>
+                    </div>
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-dark-border reveal delay-200">
+                        <div class="w-12 h-12 rounded-xl bg-dark-700 border border-dark-border flex items-center justify-center text-indigo-400 mb-6"><span class="material-symbols-rounded">route</span></div>
+                        <h3 class="text-xl font-semibold text-white mb-3" data-i18n="sol_c3_t">Optimization</h3>
+                        <p class="text-gray-400 leading-relaxed" data-i18n="sol_c3_d">Streamline your supply chain and internal processes. Eliminate bottlenecks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVICES SECTION -->
+        <section id="services" class="py-24 border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 reveal">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-4" data-i18n="srv_title">Specialized Services</h2>
+                        <p class="text-gray-400 text-lg" data-i18n="srv_desc">Tailored solutions built for the realities of modern business operations.</p>
+                    </div>
+                    <a href="#contact" class="hidden md:inline-flex items-center gap-2 text-brand-400 font-medium hover:text-brand-300 transition-colors">
+                        <span data-i18n="srv_link">Discuss your project</span> <span class="material-symbols-rounded">arrow_forward</span>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="spotlight-card p-8 rounded-2xl bg-dark-800 border border-dark-border reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-semibold text-white" data-i18n="srv_c1_t">Operational Audit</h3>
+                            <span class="material-symbols-rounded text-gray-500">troubleshoot</span>
+                        </div>
+                        <p class="text-gray-400" data-i18n="srv_c1_d">A deep dive into your current workflows to identify inefficiencies.</p>
+                    </div>
+                    <div class="spotlight-card p-8 rounded-2xl bg-dark-800 border border-dark-border reveal delay-100">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-semibold text-white" data-i18n="srv_c2_t">Automation Setup</h3>
+                            <span class="material-symbols-rounded text-gray-500">auto_mode</span>
+                        </div>
+                        <p class="text-gray-400" data-i18n="srv_c2_d">Implementation of intelligent automation systems connecting your ERP.</p>
+                    </div>
+                    <div class="spotlight-card p-8 rounded-2xl bg-dark-800 border border-dark-border reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-semibold text-white" data-i18n="srv_c3_t">Dashboard Creation</h3>
+                            <span class="material-symbols-rounded text-gray-500">dashboard</span>
+                        </div>
+                        <p class="text-gray-400" data-i18n="srv_c3_d">Custom analytics boards pulling data from all your sources.</p>
+                    </div>
+                    <div class="spotlight-card p-8 rounded-2xl bg-dark-800 border border-dark-border reveal delay-100">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-2xl font-semibold text-white" data-i18n="srv_c4_t">Strategic Consulting</h3>
+                            <span class="material-symbols-rounded text-gray-500">support_agent</span>
+                        </div>
+                        <p class="text-gray-400" data-i18n="srv_c4_d">Ongoing support and fractional COO services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. PRICING SECTION -->
+        <section id="pricing" class="py-24 bg-dark-800/30 border-y border-dark-border">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-10 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6" data-i18n="pri_title">Transparent pricing</h2>
+                    <p class="text-gray-400 text-lg mb-8" data-i18n="pri_desc">Simple tiers designed to scale with your business operations.</p>
+                    
+                    <!-- Billing Toggle -->
+                    <div class="inline-flex items-center gap-3 p-1 bg-dark-800 border border-dark-border rounded-full">
+                        <span class="text-sm font-medium text-gray-400 pl-4">Monthly</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="billing-toggle" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-dark-600 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-500"></div>
+                        </label>
+                        <span class="text-sm font-medium text-white pr-4 flex items-center gap-2">
+                            Annually <span class="bg-brand-500/20 text-brand-400 text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider">Save 20%</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Starter -->
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-dark-border flex flex-col reveal">
+                        <h3 class="text-xl font-medium text-white mb-2">Audit & Plan</h3>
+                        <p class="text-gray-400 text-sm mb-6">Perfect for identifying bottlenecks.</p>
+                        <div class="mb-8 flex items-end gap-1">
+                            <span class="text-4xl font-bold text-white price-val" data-monthly="$999" data-annual="$799">$799</span>
+                            <span class="text-gray-500 text-sm mb-1">/mo</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Process Mapping</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Actionable Roadmap</li>
+                        </ul>
+                        <a href="#contact" class="w-full py-3 text-center rounded-xl bg-dark-700 text-white font-medium hover:bg-dark-600 transition-colors" data-i18n="pri_btn_1">Get Quote</a>
+                    </div>
+                    
+                    <!-- Pro (Highlighted) -->
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-brand-500 relative flex flex-col transform md:-translate-y-4 shadow-[0_0_30px_rgba(14,165,233,0.1)] reveal delay-100">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Most Popular</div>
+                        <h3 class="text-xl font-medium text-white mb-2">Build & Automate</h3>
+                        <p class="text-gray-400 text-sm mb-6">Complete digital transformation.</p>
+                        <div class="mb-8 flex items-end gap-1">
+                            <span class="text-4xl font-bold text-white price-val" data-monthly="$2,499" data-annual="$1,999">$1,999</span>
+                            <span class="text-gray-500 text-sm mb-1">/mo</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Everything in Audit</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Custom Automations</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Core Dashboard</li>
+                        </ul>
+                        <a href="#contact" class="w-full py-3 text-center rounded-xl bg-white text-dark-900 font-bold hover:bg-gray-100 transition-colors" data-i18n="pri_btn_2">Start Project</a>
+                    </div>
+
+                    <!-- Enterprise -->
+                    <div class="spotlight-card p-8 rounded-3xl bg-dark-800 border border-dark-border flex flex-col reveal delay-200">
+                        <h3 class="text-xl font-medium text-white mb-2">Enterprise</h3>
+                        <p class="text-gray-400 text-sm mb-6">Fractional COO & optimization.</p>
+                        <div class="mb-8">
+                            <span class="text-4xl font-bold text-white">Custom</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-1">
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Unlimited Automations</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-300"><span class="material-symbols-rounded text-brand-500 text-lg">check_circle</span> Dedicated Ops Partner</li>
+                        </ul>
+                        <a href="#contact" class="w-full py-3 text-center rounded-xl bg-dark-700 text-white font-medium hover:bg-dark-600 transition-colors" data-i18n="pri_btn_3">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="py-24 max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="faq_title">Frequently Asked Questions</h2>
+                <p class="text-gray-400" data-i18n="faq_desc">Everything you need to know about the product and billing.</p>
+            </div>
+            
+            <div class="space-y-4 reveal delay-100">
+                <div class="faq-item bg-dark-800 border border-dark-border rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left text-white font-medium focus:outline-none">
+                        How long does an audit usually take?
+                        <span class="material-symbols-rounded faq-icon transition-transform text-gray-400">expand_more</span>
+                    </button>
+                    <div class="faq-content bg-dark-900/50">
+                        <p class="px-6 pb-4 text-gray-400 text-sm">Most audits are completed within 7 to 14 days, depending on the complexity of your current operations and data availability.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-dark-800 border border-dark-border rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left text-white font-medium focus:outline-none">
+                        Is this suited for small businesses?
+                        <span class="material-symbols-rounded faq-icon transition-transform text-gray-400">expand_more</span>
+                    </button>
+                    <div class="faq-content bg-dark-900/50">
+                        <p class="px-6 pb-4 text-gray-400 text-sm">Absolutely. We tailor our systems for SMEs. Automating early prevents growing pains later.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-dark-800 border border-dark-border rounded-xl overflow-hidden">
+                    <button class="w-full px-6 py-4 flex items-center justify-between text-left text-white font-medium focus:outline-none">
+                        Do I need a technical team to manage it?
+                        <span class="material-symbols-rounded faq-icon transition-transform text-gray-400">expand_more</span>
+                    </button>
+                    <div class="faq-content bg-dark-900/50">
+                        <p class="px-6 pb-4 text-gray-400 text-sm">No! We build "no-code/low-code" friendly dashboards and provide complete training for your existing staff.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section id="contact" class="py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-brand-600/10 backdrop-blur-3xl z-[-1]"></div>
+            <div class="max-w-4xl mx-auto px-6 text-center reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-i18n="cta_title">Ready to scale your operations?</h2>
+                <p class="text-xl text-gray-300 mb-10" data-i18n="cta_desc">Stop losing money to manual work. Let's build systems that work for you.</p>
+                <form class="max-w-md mx-auto bg-dark-800/80 p-6 rounded-2xl border border-dark-border shadow-xl backdrop-blur-md">
+                    <div class="mb-4"><input type="text" placeholder="Full Name" class="w-full bg-dark-900 border border-dark-border rounded-xl px-4 py-3 text-white focus:border-brand-500 outline-none" required></div>
+                    <div class="mb-4"><input type="email" placeholder="Work Email" class="w-full bg-dark-900 border border-dark-border rounded-xl px-4 py-3 text-white focus:border-brand-500 outline-none" required></div>
+                    <div class="mb-6"><textarea placeholder="Tell us about your challenges..." rows="3" class="w-full bg-dark-900 border border-dark-border rounded-xl px-4 py-3 text-white focus:border-brand-500 outline-none" required></textarea></div>
+                    <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-white font-bold py-3 rounded-xl transition-colors" data-i18n="cta_btn">Request a Consultation</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <a href="#" class="logo" style="margin-bottom: 2rem;">OUREVOX</a>
-                <p>Scaling operational excellence globally through data-driven intelligence.</p>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1.5rem;">Product</h4>
-                <ul style="list-style: none; line-height: 2;">
-                    <li><a href="#solutions" style="text-decoration: none; color: var(--text-secondary);">Solutions</a></li>
-                    <li><a href="#services" style="text-decoration: none; color: var(--text-secondary);">Services</a></li>
-                    <li><a href="#case-study" style="text-decoration: none; color: var(--text-secondary);">Case Study</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1.5rem;">Company</h4>
-                <ul style="list-style: none; line-height: 2;">
-                    <li><a href="mailto:contact@rejustewenoumi.com" style="text-decoration: none; color: var(--text-secondary);">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 style="color: white; margin-bottom: 1.5rem;">Social</h4>
-                <ul style="list-style: none; line-height: 2;">
-                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">LinkedIn</a></li>
-                    <li><a href="#" style="text-decoration: none; color: var(--text-secondary);">Twitter</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 6rem; color: var(--text-secondary); font-size: 0.875rem;">
-            © 2024 Ourevox. All rights reserved.
-        </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-dark-border py-12 text-center text-sm text-gray-500">
+        © 2024 Ourevox. Designed for modern SMEs.
     </footer>
 
     <script src="js/scripts.js"></script>
