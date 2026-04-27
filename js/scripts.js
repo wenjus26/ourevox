@@ -61,6 +61,34 @@ const translations = {
         pri_btn_1: "Get Quote",
         pri_btn_2: "Start Project",
         pri_btn_3: "Contact Sales",
+        
+        // Before / After
+        ba_title: "From manual chaos to automated harmony",
+        ba_before: "Scattered data, human errors, communication delays.",
+        ba_after: "Synchronized flow, zero errors, real-time insights.",
+        
+        // Integrations
+        int_title: "Plays well with your stack",
+        int_desc: "Ourevox seamlessly connects your existing tools to create a single, powerful source of truth.",
+        
+        // ROI
+        roi_title: "Calculate your potential savings",
+        roi_desc: "See how much capital you can free up by automating repetitive administrative workflows.",
+        roi_label: "Employees doing manual data entry:",
+        roi_res1: "Hours Saved / Year",
+        roi_res2: "Est. Savings / Year",
+        
+        // Testimonials
+        test_title: "They transformed their operations",
+        test_q1: "Automating our supply chain workflows saved us 20h a week. Incredible ROI.",
+        test_q2: "The custom data dashboard is our new daily compass for decision-making.",
+        test_q3: "Productivity increased by 300% without linearly increasing our headcount.",
+        
+        // Founder
+        found_title: "Our Mission",
+        found_text: "I've seen too many brilliant companies in West Africa stall due to outdated, manual processes. Our mission at Ourevox isn't just to implement software—it's to architect the digital infrastructure that will power tomorrow's economic champions.",
+        found_role: "Founder, Ourevox",
+
         faq_title: "Frequently Asked Questions",
         faq_desc: "Everything you need to know about the product and billing.",
         cta_title: "Ready to scale your operations?",
@@ -128,6 +156,34 @@ const translations = {
         pri_btn_1: "Obtenir un Devis",
         pri_btn_2: "Démarrer",
         pri_btn_3: "Contacter les Ventes",
+        
+        // Before / After
+        ba_title: "De l'enfer manuel à l'harmonie automatisée",
+        ba_before: "Données dispersées, erreurs humaines, retards.",
+        ba_after: "Flux synchronisé, zéro erreur, temps réel.",
+        
+        // Integrations
+        int_title: "S'intègre à votre écosystème",
+        int_desc: "Ourevox connecte vos outils existants pour créer une source de vérité unique et puissante.",
+        
+        // ROI
+        roi_title: "Calculez vos économies potentielles",
+        roi_desc: "Découvrez combien de capital vous pouvez libérer en automatisant vos tâches répétitives.",
+        roi_label: "Employés faisant de la saisie manuelle :",
+        roi_res1: "Heures Sauvées / An",
+        roi_res2: "Économies Est. / An",
+        
+        // Testimonials
+        test_title: "Ils ont transformé leurs opérations",
+        test_q1: "L'automatisation de notre logistique nous a fait gagner 20h par semaine. ROI incroyable.",
+        test_q2: "Le tableau de bord sur-mesure est devenu notre boussole pour chaque décision.",
+        test_q3: "Notre productivité a augmenté de 300% sans recrutement massif.",
+        
+        // Founder
+        found_title: "Notre Mission",
+        found_text: "J'ai vu trop d'entreprises brillantes en Afrique stagner à cause de processus manuels dépassés. Notre mission chez Ourevox n'est pas juste d'installer des logiciels, mais de bâtir l'infrastructure numérique des futurs champions économiques.",
+        found_role: "Fondateur, Ourevox",
+
         faq_title: "Questions Fréquentes",
         faq_desc: "Tout ce que vous devez savoir sur notre fonctionnement.",
         cta_title: "Prêt à transformer vos opérations ?",
@@ -293,4 +349,53 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLanguage(btn.getAttribute('data-lang'));
         });
     });
+
+    // --- 10. ROI CALCULATOR LOGIC ---
+    const roiSlider = document.getElementById('roi-slider');
+    const roiEmpCount = document.getElementById('roi-emp-count');
+    const roiHours = document.getElementById('roi-hours');
+    const roiMoney = document.getElementById('roi-money');
+
+    if(roiSlider && roiEmpCount && roiHours && roiMoney) {
+        roiSlider.addEventListener('input', (e) => {
+            const employees = parseInt(e.target.value);
+            roiEmpCount.textContent = employees;
+            
+            // Assumption: each employee spends 10h/week on manual tasks. 52 weeks = 520h/year.
+            // Assumption: average hourly cost = $15.
+            const hoursSaved = employees * 520;
+            const moneySaved = hoursSaved * 15;
+            
+            // Animate numbers (simple instantaneous update here, could use a counter library)
+            roiHours.textContent = hoursSaved.toLocaleString();
+            roiMoney.textContent = "$" + moneySaved.toLocaleString();
+        });
+    }
+
+    // --- 11. BEFORE / AFTER SLIDER ---
+    const baContainer = document.querySelector('.ba-container');
+    const baAfter = document.querySelector('.ba-after');
+    const baHandle = document.querySelector('.ba-handle');
+    
+    if (baContainer && baAfter && baHandle) {
+        let isDragging = false;
+        
+        const updateSlider = (x) => {
+            const rect = baContainer.getBoundingClientRect();
+            let position = ((x - rect.left) / rect.width) * 100;
+            position = Math.max(0, Math.min(position, 100));
+            baAfter.style.width = `${position}%`;
+            baHandle.style.left = `${position}%`;
+        };
+
+        baContainer.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
+        window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+        
+        // Touch support
+        baContainer.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); });
+        window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+        window.addEventListener('touchend', () => { isDragging = false; });
+    }
+
 });
